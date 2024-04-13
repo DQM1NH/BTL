@@ -12,13 +12,13 @@ public class Quanly {
     ArrayList<Nguoi> preson;
     ArrayList<Khachhang> Khachhang;
     ArrayList<Maytinh> maytinh;
-    ArrayList<Nhanvien> nhanvien;
+    ArrayList<Nhanvien> Nhanvien;
 
     public Quanly() {
         preson = new ArrayList<>();
         maytinh = new ArrayList<>();
         Khachhang = new ArrayList<>();
-        nhanvien = new ArrayList<>();
+        Nhanvien = new ArrayList<>();
     }
     public void themDSNguoi(Nguoi a){
         System.out.println("Nhap so luong can them: ");
@@ -159,7 +159,7 @@ public class Quanly {
         for (Khachhang khachhang : Khachhang) {
             if(khachhang instanceof Khachhang){
                 if(((Khachhang)khachhang).getMaKH().compareTo(makh) == 0){
-                    khachhang.remove();
+                    Khachhang.remove(khachhang);
                     khachhang.hien();
                 }
             }
@@ -167,21 +167,21 @@ public class Quanly {
         }
     }
     public void suaNhanvien(String manv){
-        for (Nguoi nguoi : preson) {
-            if(nguoi instanceof Nhanvien){
-                if(((Nhanvien)nguoi).getMaNV().compareTo(manv) == 0){
-                    nguoi.nhap();
-                    nguoi.hien();
+        for (Nhanvien nhanvien : Nhanvien) {
+            if(nhanvien instanceof Nhanvien){
+                if(((Nhanvien)nhanvien).getMaNV().compareTo(manv) == 0){
+                    nhanvien.nhap();
+                    nhanvien.hien();
                 }
             }
             
         }
     }
     public void xoaNhanvien(String manv){
-        for (Nhanvien nhanvien : nhanvien) {
+        for (Nhanvien nhanvien : Nhanvien) {
             if(nhanvien instanceof Nhanvien){
                 if(((Nhanvien)nhanvien).getMaNV().compareTo(manv) == 0){
-                    preson.remove(nhanvien);
+                    Nhanvien.remove(nhanvien);
                     nhanvien.hien();
                 }
             }
@@ -190,7 +190,7 @@ public class Quanly {
     }
     public void hienDSNhanvien(){
         System.out.println("----------------------------------------------");
-        for (Nhanvien nhanvien : nhanvien) {
+        for (Nhanvien nhanvien : Nhanvien) {
             if(nhanvien instanceof Nhanvien){
                 nhanvien.hien();
             }    

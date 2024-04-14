@@ -167,33 +167,42 @@ public class Quanly {
         }
     }
     public void suaNhanvien(String manv){
-        for (Nhanvien nhanvien : Nhanvien) {
-            if(nhanvien instanceof Nhanvien){
-                if(((Nhanvien)nhanvien).getMaNV().compareTo(manv) == 0){
-                    nhanvien.nhap();
-                    nhanvien.hien();
+        for (Nguoi nguoi : preson) {
+            if(nguoi instanceof Nhanvien){
+                if(((Nhanvien)nguoi).getMaNV().compareTo(manv) == 0){
+                    nguoi.nhap();
+                    nguoi.hien();
                 }
             }
-            
         }
     }
     public void xoaNhanvien(String manv){
-        for (Nhanvien nhanvien : Nhanvien) {
-            if(nhanvien instanceof Nhanvien){
-                if(((Nhanvien)nhanvien).getMaNV().compareTo(manv) == 0){
-                    Nhanvien.remove(nhanvien);
-                    nhanvien.hien();
+        for (Nguoi nguoi : preson) {
+            if(nguoi instanceof Nhanvien){
+                if(((Nhanvien)nguoi).getMaNV().compareTo(manv) == 0){
+                    preson.remove(nguoi);
+                    nguoi.hien();
                 }
             }
             
         }
     }
+//    public void xoaNhanvien(String manv){
+//        for (Nhanvien nhanvien : Nhanvien) {
+//            if(nhanvien instanceof Nhanvien){
+//                if(((Nhanvien)nhanvien).getMaNV().compareTo(manv) == 0){
+//                    Nhanvien.remove(nhanvien);
+//                    nhanvien.hien();
+//                }
+//            }
+//            
+//        }
+//    }
     public void hienDSNhanvien(){
         System.out.println("----------------------------------------------");
-        for (Nhanvien nhanvien : Nhanvien) {
-            if(nhanvien instanceof Nhanvien){
-                nhanvien.hien();
-            }    
+        for (Nguoi nguoi : preson) {
+            if(nguoi instanceof Nhanvien)
+                nguoi.hien(); 
         }
     }
     public  void hienDS(){
